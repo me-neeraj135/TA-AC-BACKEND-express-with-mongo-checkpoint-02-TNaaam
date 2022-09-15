@@ -1,0 +1,35 @@
+<!-- @format -->
+<% include partial/header %>
+<body>
+  <main>
+    <section
+      style="height: 100vh; background-color: rosybrown"
+      class="container flex align-center"
+    >
+      <form
+        class="editRemarkForm"
+        action="/remarks/<%= remark.id %>/update"
+        method="post"
+      >
+        <h1>update remark</h1>
+        <input
+          type="text"
+          name="name"
+          placeholder="enter your name here"
+          value="<%= remark.name %>"
+        />
+        <textarea
+          name="remark"
+          id=""
+          cols="5"
+          rows="3"
+          aria-placeholder="enter your remark"
+        >
+<%= remark.remark %>
+    </textarea
+        >
+        <input class="submit" type="submit" value=" update " />
+      </form>
+    </section>
+  </main>
+</body>

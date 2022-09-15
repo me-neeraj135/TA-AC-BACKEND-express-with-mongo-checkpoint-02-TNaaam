@@ -1,0 +1,85 @@
+<!-- @format -->
+
+<% include partial/header %>
+<body>
+  <main class="eventContainer flex align-center">
+    <div class="container eventBox">
+      <article>
+        <h1><%= event.title %></h1>
+        <div class="flex justify-between">
+          <p class="host">hosted by :<%= event.host %></p>
+          <p class="host">
+            event will start on: <%= event.startDate.toString().substring(0,15)
+            %>
+          </p>
+        </div>
+        <p class="summary"><%= event.summary %></p>
+        <p class="summary">categories:<%= event.categories %></p>
+        <div class="flex justify-between location">
+          <span>location:<%= event.location %></span>
+          <div>
+            <span>
+              <a href="/events/<%= event.id %>/likes">
+                👍 <%= event.likes %>
+              </a>
+            </span>
+            <span>
+              <a href=""> </a>
+              <a href="/events/<%= event.id %>/dislikes">
+                👎 <%= event.dislikes %>
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <button class="btn btn-secondary">
+          <a href="/events/<%= event.id%>/edit">edit</a>
+        </button>
+        <button class="btn btn-primary">
+          <a href="/events/<%= event.id%>/delete">delete</a>
+        </button>
+      </article>
+
+      <!-- create remark   -->
+
+      <form
+        class="remarkForm"
+        action="/events/<%= event.id %>/remarks"
+        method="post"
+      >
+        <input type="text" name="name" placeholder="enter your name here" />
+        <textarea
+          name="remark"
+          id=""
+          cols="5"
+          rows="3"
+          aria-placeholder="enter your remark"
+        ></textarea>
+        <input class="submit" type="submit" value="remark" />
+      </form>
+
+      <%event.remarks.forEach(remark=>{%>
+
+      <!-- remarks -->
+
+      <div class="remarkContainer">
+        <p class="remarkName">
+          <%= remark.name %> : <span><%= remark.remark %></span>
+          <a href="/remarks/<%= remark.id %>/likes"> 👍 <%= remark.likes %> </a>
+
+          <a href="/remarks/<%= remark.id %>/dislikes">
+            👎 <%= remark.dislikes %>
+          </a>
+        </p>
+        <a class="remarkEdit" href="/remarks/<%= remark.id %>/edit">edit</a>
+        <a class="remarkDelete" href="/remarks/<%= remark.id %>/delete"
+          >delete</a
+        >
+      </div>
+      <br />
+
+      <%})%>
+    </div>
+  </main>
+  <% include partial/footer %>
+</body>
