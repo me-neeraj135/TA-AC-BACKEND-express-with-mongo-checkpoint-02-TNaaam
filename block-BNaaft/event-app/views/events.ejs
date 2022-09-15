@@ -1,0 +1,80 @@
+<!-- @format -->
+
+<% include partial/header %>
+
+<body>
+  <main>
+    <div class="container flex justify-between eventsContainer">
+      <ul class="eventsUl">
+        <% events.forEach(e=>{%>
+
+        <li>
+          <h1><%= e.title %></h1>
+          <div class="justify-between">
+            <p class="host">Hosted by: <%= e.host %></p>
+            <p class="host"><%= e.startDate %></p>
+          </div>
+          <p class="summary"></p>
+          <div class="flex justify-between locationSpan">
+            <span>Location:<%= e.location %></span>
+            <div>
+              <span> 👍 <%= e.likes%> </span>
+              <span> 👎 <%= e.dislikes %> </span>
+            </div>
+          </div>
+
+          <button class="btn btn-secondary">
+            <a href="/events/<%= e.id %>">read more</a>
+          </button>
+        </li>
+
+        <%})%>
+      </ul>
+
+      <!-- aside -->
+
+      <div class="sideBar">
+        <div class="filterBar flex flex-direction-column justify-between">
+          <div class="custom-select">
+            <h3>filter by categories</h3>
+            <ul class="sideBarUlCategory">
+              <li>▼ all categories</li>
+
+              <% uniqueCategories.forEach(elm=>{%>
+
+              <li class="categoryLi displayNone">
+                <a href="/events/<%= elm %>/categories"> <%= elm%> </a>
+              </li>
+              <%}) %>
+            </ul>
+
+            <h3>filter by locations</h3>
+
+            <ul class="sideBarUlLocation">
+              <li>▼ all location</li>
+
+              <% uniqueLocation.forEach(elm=>{%>
+              <li class="locationLi displayNone">
+                <a href="/events/<%= elm %>/location"> <%= elm%> </a>
+              </li>
+              <%}) %>
+            </ul>
+          </div>
+          <form action="/events/date" method="post">
+            <legend>filter by date</legend>
+            <label for=""> Start Date</label>
+            <input type="date" name="date" />
+            <label for=""> End Date</label>
+
+            <input type="date" name="date" />
+
+            <button class="submit btn btn-secondary" type=" submit">
+              find event
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="/javascripts/canvas.js"></script>
+</body>

@@ -1,0 +1,57 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Signika:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="homeHeader">
+      <nav class="container">
+        <ul class="flex justify-between align-center">
+          <li class="logo">
+            <a href="/"> eventador</a>
+          </li>
+          <div class="subLogo flex justify-between">
+            <li>
+              <a href="/events/new">add event</a>
+            </li>
+            <li>
+              <a href="/events">all event</a>
+            </li>
+            <li>
+              <a href="#">contact us</a>
+            </li>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <div>
+      <canvas id="canvas"></canvas>
+      <article class="homeHeadingBox flex align-center justify-center">
+        <div>
+          <!-- <span> date</span> -->
+          <h1>Inventador</h1>
+          <h2>🎊 conference 🎊</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
+            autem accusamus rem inventore laborum dolorum culpa eius
+            necessitatibus velit optio, perspiciatis dolor ratione ea
+            reiciendis! Veritatis qui quod recusandae at!
+          </p>
+          <button class="btn btn-secondary">
+            <a href="events/new">book event</a>
+          </button>
+        </div>
+      </article>
+    </div>
+
+    <script src="/javascripts/canvas.js"></script>
+  </body>
+</html>
