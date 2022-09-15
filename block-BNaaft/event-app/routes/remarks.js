@@ -12,7 +12,7 @@ router.get(`/:id/edit`, (req, res, next) => {
   let id = req.params.id;
   Remark.findById(id, (err, remark) => {
     if (err) return next(remark);
-    console.log(err, remark);
+    // console.log(err, remark);
     res.render(`editRemark`, { remark });
   });
 });
