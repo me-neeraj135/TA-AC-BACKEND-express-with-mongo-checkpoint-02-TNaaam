@@ -25,7 +25,7 @@ router.post(`/`, (req, res, next) => {
   // console.log(req.body.startDate);
   Event.create(req.body, (err, event) => {
     if (err) return next(err);
-    console.log(err, event);
+    // console.log(err, event);
     res.redirect(`/events/` + event.id);
   });
 });
@@ -169,7 +169,7 @@ router.post(`/date`, (req, res, next) => {
     { startDate: { $gte: sd }, endDate: { $lte: ed } },
     (err, events) => {
       if (err) return next(err);
-      console.log(err, events);
+      // console.log(err, events);
 
       Event.distinct(`categories`, (err, uniqueCategories) => {
         if (err) return next(err);
