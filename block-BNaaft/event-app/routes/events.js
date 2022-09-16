@@ -8,6 +8,7 @@ let Event = require(`../models/event`);
 let Moment = require(`moment`);
 let common = require(`../common`);
 const { events } = require("../models/remark");
+const { formatted_date } = require("../common");
 
 router.get(`/new`, (req, res, next) => {
   res.render(`eventForm`);
@@ -17,12 +18,8 @@ router.get(`/new`, (req, res, next) => {
 
 router.post(`/`, (req, res, next) => {
   req.body.categories = req.body.categories.trim().split(` `);
-  req.body.startDate = Moment(req.body.startDate).format(`l`);
-  req.body.endDate = Moment(req.body.endDate).format(`l`);
 
-  req.body.location = common.lowercase(req.body.location);
-
-  // console.log(req.body.startDate);
+  console.log(req.body.startDate);
   Event.create(req.body, (err, event) => {
     if (err) return next(err);
     // console.log(err, event);
@@ -54,7 +51,6 @@ router.get(`/:id`, (req, res, next) => {
     .populate(`remarks`)
     .exec((err, event) => {
       if (err) return next(err);
-      // console.log(err, event);
       res.render(`event`, { event });
     });
 });
@@ -85,10 +81,13 @@ router.get(`/:id/dislikes`, (req, res, next) => {
 
 router.get(`/:id/edit`, (req, res, next) => {
   let id = req.params.id;
-
   Event.findById(id, (err, event) => {
     if (err) return next(err);
-    res.render(`editEvent`, { event });
+
+    let startDate = formatted_date(event.startDate);
+    let endDate = formatted_date(event.endDate);
+
+    res.render(`editEvent`, { event, startDate, endDate });
   });
 });
 
@@ -98,8 +97,6 @@ router.post(`/:id/update`, (req, res, next) => {
   let id = req.params.id;
 
   req.body.categories = req.body.categories.trim().split(` `);
-  req.body.startDate = Moment(req.body.startDate).format(`LL`);
-  req.body.endDate = Moment(req.body.endDate).format(`LL`);
 
   Event.findByIdAndUpdate(id, req.body)
     .populate(`remarks`)
@@ -132,7 +129,6 @@ router.get(`/:param/categories`, (req, res, next) => {
       if (err) return next(err);
       Event.distinct(`location`, (err, uniqueLocation) => {
         if (err) return next(err);
-        // console.log(err, events, uniqueCategories, uniqueLocation);
         res.render(`events`, { events, uniqueCategories, uniqueLocation });
       });
     });
@@ -163,7 +159,6 @@ router.get(`/:location/location`, (req, res, next) => {
 router.post(`/date`, (req, res, next) => {
   let sd = req.body.date[0];
   let ed = req.body.date[1];
-  // console.log(sd, ed);
 
   Event.find(
     { startDate: { $gte: sd }, endDate: { $lte: ed } },
@@ -186,16 +181,19 @@ router.post(`/date`, (req, res, next) => {
 
 router.post(`/:id/remarks`, (req, res, next) => {
   req.body.eventId = req.params.id;
+
   Remark.create(req.body, (err, remark) => {
     if (err) return next(err);
     let remarkId = remark.id;
+
     // console.log(err, remark);
+
     Event.findByIdAndUpdate(
       req.params.id,
       { $push: { remarks: remarkId } },
       (err, event) => {
         if (err) return next(err);
-        console.log(err, event);
+        // console.log(err, event);
         res.redirect(`/events/` + req.params.id);
       }
     );
