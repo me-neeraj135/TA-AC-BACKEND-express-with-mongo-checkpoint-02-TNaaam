@@ -68,8 +68,12 @@
           <a href="/remarks/<%= remark.id %>/likes"> 👍 <%= remark.likes %> </a>
 
           <a href="/remarks/<%= remark.id %>/dislikes">
-            👎 <%= remark.dislikes %>
-          </a>
+            👎 <%= remark.dislikes %> </a
+          ><br />
+          <span>
+            remarked on :<%= new
+            Date(remark.createdAt).toString().substring(0,15) %>
+          </span>
         </p>
         <a class="remarkEdit" href="/remarks/<%= remark.id %>/edit">edit</a>
         <a class="remarkDelete" href="/remarks/<%= remark.id %>/delete"
