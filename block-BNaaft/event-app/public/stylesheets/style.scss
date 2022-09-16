@@ -1,0 +1,492 @@
+/** @format */
+
+* {
+  box-sizing: border-box;
+}
+
+@import "reset";
+@import "global";
+@import "flex";
+
+// styling
+
+$brown: #e04b31;
+$darkBlue: #070729;
+$blue: #1a2a53;
+$green: #5cbb51;
+
+// particles header
+
+.particleHeader {
+  background-color: $darkBlue;
+  padding: 1rem 0;
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  .particleLogo {
+    a {
+      font-size: 2rem;
+      text-transform: capitalize;
+      font-style: italic;
+      font-family: "Cedarville Cursive";
+      color: #53b5d4;
+    }
+  }
+
+  .particleNavLink {
+    width: 30%;
+    li {
+      a {
+        font-size: 1rem;
+        color: #53b5d4;
+        text-transform: capitalize;
+        font-family: "Cedarville Cursive";
+      }
+    }
+  }
+}
+
+// particle footer
+
+.particleFooter {
+  background-color: $blue;
+  padding: 1rem 0;
+  div {
+    text-align: center;
+    small {
+      color: $darkBlue;
+      vertical-align: middle;
+      text-transform: lowercase;
+    }
+  }
+}
+// home page
+
+.homeHeader {
+  position: absolute;
+  z-index: 99;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 1rem 0;
+}
+
+.logo {
+  width: 20%;
+  font-size: 2rem;
+  font-weight: 900;
+  font-style: oblique;
+  a {
+    color: #53b5d4;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-family: "Cedarville Cursive";
+  }
+}
+.subLogo {
+  width: 30%;
+  li {
+    a {
+      color: #53b5d4;
+      font-size: 1.5rem;
+      text-transform: capitalize;
+      font-family: "Cedarville Cursive";
+    }
+  }
+}
+
+#canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/pexels-edoardo-tommasini-2034851.jpg");
+  background-position: 100% 100%;
+  background-size: cover;
+}
+
+.homeHeadingBox {
+  position: absolute;
+  background-color: rgba(28, 19, 75, 0.719);
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  div {
+    width: 50%;
+  }
+  span {
+    font-size: 1.3rem;
+    color: white;
+  }
+  h1 {
+    font-size: 3.5rem;
+    color: #53b5d4;
+    font-weight: 900;
+    margin: 1rem 0;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    font-family: cursive;
+    text-shadow: 3px -5px #070729;
+  }
+  h2 {
+    font-size: 2rem;
+    color: wheat;
+    font-weight: 600;
+    text-transform: uppercase;
+    word-wrap: break-word;
+
+    text-shadow: 3px -5px #070729;
+    font-family: cursive;
+  }
+  p {
+    font-size: 1.3rem;
+    color: wheat;
+
+    font-weight: 100;
+    margin: 1rem 0;
+    font-family: "Cedarville Cursive";
+  }
+}
+
+// event form -style
+
+.formPageBody {
+  background-color: #4ca180;
+}
+.eventForm {
+  width: 35%;
+  height: 100vh;
+  margin: 2.5rem auto;
+
+  padding: 2rem 3rem;
+  background-color: #53b5d4;
+  border-radius: 8px;
+
+  h2 {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  input {
+    width: 100%;
+    font-size: 1rem;
+    text-transform: capitalize;
+    outline: none;
+    color: white;
+    border-radius: 2px;
+    border: 1px solid $darkBlue;
+    background-color: #4ca18081;
+  }
+  textarea {
+    width: 100%;
+    resize: none;
+    border-radius: 2px;
+    color: white;
+
+    outline: none;
+    border: 1px solid $darkBlue;
+    background-color: #4ca18081;
+  }
+  .formDateBox {
+    div {
+      width: 40%;
+      label {
+        font-size: 0.8rem;
+        color: $darkBlue;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .submit {
+    padding: 1rem 0;
+    background-color: $darkBlue;
+    color: #53b5d4;
+  }
+}
+
+// all events list
+.eventsContainer {
+  height: 100vh;
+  background-color: $darkBlue;
+  padding-top: 1rem;
+}
+.eventsUl {
+  width: 68%;
+  height: 100%;
+  overflow: auto;
+
+  li {
+    background-color: #1a2a53;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    h1 {
+      text-transform: capitalize;
+      font-size: 1.5rem;
+      color: #5cbb51;
+    }
+    p {
+      text-transform: capitalize;
+      font-size: smaller;
+      color: wheat;
+      color: gray;
+    }
+    .locationSpan {
+      margin: 0.5rem 0;
+      span {
+        font-size: smaller;
+        text-transform: capitalize;
+        color: gray;
+      }
+    }
+  }
+}
+
+.eventsUl::-webkit-scrollbar {
+  display: none;
+}
+
+// filter box
+
+.sideBar {
+  width: 30%;
+}
+
+.filterBar {
+  padding: 2rem 1rem;
+  border-radius: 4px;
+  background-color: #1a2a53;
+
+  .custom-select {
+    width: 100%;
+    h3 {
+      text-transform: capitalize;
+      color: #5cbb51;
+      font-size: smaller;
+    }
+  }
+
+  form {
+    width: 100%;
+    legend {
+      text-align: center;
+      text-transform: capitalize;
+      color: #53b5d4;
+      padding: 0.5rem 0;
+      border: 1px solid #53b5d4;
+      background-color: $darkBlue;
+      margin: 0.4rem 0;
+    }
+    label {
+      color: #5cbb51;
+      font-size: smaller;
+    }
+    input {
+      width: 100%;
+      margin: 0.2rem 0;
+      padding: 0.5rem;
+      color: #53b5d4;
+      background-color: #07072950;
+      border: 1px solid #53b5d4;
+    }
+    .submit {
+      text-transform: capitalize;
+    }
+  }
+}
+
+.sideBarUlCategory {
+  width: 100%;
+
+  text-align: center;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  color: #53b5d4;
+  text-transform: capitalize;
+
+  background-color: #070729;
+  h3 {
+    text-transform: capitalize;
+    color: #53b5d4;
+  }
+  .categoryLi {
+    text-align: left;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    background-color: #070729;
+    padding-top: 0.5rem;
+    border-bottom: 1px solid $blue;
+    // background-color: #53b5d4;
+
+    // margin: 1rem 0;
+    // position: relative;
+    a {
+      color: #53b5d4;
+    }
+  }
+}
+
+.sideBarUlLocation {
+  width: 100%;
+  text-align: center;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  color: #53b5d4;
+
+  background-color: #070729;
+  text-transform: capitalize;
+  // color: whitesmoke;
+
+  // overflow: auto;
+  h3 {
+    text-transform: capitalize;
+  }
+  .locationLi {
+    text-align: left;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    background-color: #070729;
+    padding-top: 0.5rem;
+    border-bottom: 1px solid $blue;
+    a {
+      color: #53b5d4;
+    }
+  }
+}
+
+.displayBlock {
+  display: block;
+  color: white;
+  background-color: #53b5d4;
+  margin: 1rem 0;
+}
+.displayNone {
+  display: none;
+}
+
+// event -style
+
+.eventContainer {
+  height: 100vh;
+  background-color: #1a2a53a4;
+  .eventBox {
+    width: 80%;
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: #4ca1808a;
+    box-shadow: 0px 0px 4px 4px #070729be;
+    article {
+      h1 {
+        font-size: 2rem;
+        color: white;
+        text-transform: capitalize;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      .host {
+        font-size: 1rem;
+        color: white;
+        text-transform: capitalize;
+      }
+      .summary {
+        margin: 0.5rem 0;
+        color: white;
+        font-size: small;
+      }
+      .location {
+        color: white;
+        text-transform: capitalize;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  .remarkForm {
+    width: 15%;
+    margin-top: 1rem;
+    input {
+      width: 100%;
+      border: 1px solid;
+      border-top-right-radius: 1rem;
+      background-color: #1a2a53;
+      color: white;
+      outline: none;
+    }
+    textarea {
+      width: 100%;
+      resize: none;
+      margin: 0.5rem 0;
+      border: 1px solid;
+      color: white;
+      outline: none;
+      border-bottom-left-radius: 1rem;
+      background-color: #1a2a53;
+    }
+    .submit {
+      width: 4rem;
+      border-bottom-left-radius: 1rem;
+    }
+  }
+  .remarkContainer {
+    margin: 0.5rem 0;
+    display: inline-block;
+    .remarkName {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: white;
+
+      span {
+        font-size: 0.7rem;
+        font-weight: 500;
+        color: white;
+      }
+    }
+
+    .remarkEdit {
+      font-size: 0.7rem;
+      font-weight: 900;
+      color: $darkBlue;
+    }
+    .remarkDelete {
+      font-size: 0.7rem;
+      font-weight: 900;
+      color: brown;
+    }
+  }
+}
+
+// edit remark form
+
+.editRemarkForm {
+  width: 40%;
+  height: 20rem;
+
+  margin: auto;
+  padding: 2rem;
+  border: 1px solid black;
+  h1 {
+    font-size: 2rem;
+    color: $darkBlue;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+
+  input {
+    width: 100%;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    text-transform: capitalize;
+  }
+  textarea {
+    width: 100%;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    resize: none;
+  }
+}
