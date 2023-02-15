@@ -1,6 +1,8 @@
 /** @format */
 * {
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
 /** @format */
 html,
@@ -89,7 +91,8 @@ video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
 /* HTML5 display-role reset for older browsers */
 article,
@@ -103,29 +106,35 @@ hgroup,
 menu,
 nav,
 section {
-  display: block; }
+  display: block;
+}
 
 body {
-  line-height: 1; }
+  line-height: 1;
+}
 
 ol,
 ul {
-  list-style: none; }
+  list-style: none;
+}
 
 blockquote,
 q {
-  quotes: none; }
+  quotes: none;
+}
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
   content: "";
-  content: none; }
+  content: none;
+}
 
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+}
 
 /**
  * /* Global Styles
@@ -134,52 +143,67 @@ table {
  */
 /* General */
 html {
-  font-size: 16px; }
+  font-size: 16px;
+}
 
 body {
   font-size: 1.125rem;
-  font-family: "Nunito", sans-serif; }
+  font-family: "Nunito", sans-serif;
+}
 
 /* Container */
 .container {
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 1.5rem; }
+  padding: 0 1.5rem;
+}
 
 /* Anchor Decoration */
 a {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 /* Image Adjust */
 .full-width {
   width: 100%;
-  object-fit: cover; }
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 
 /* Positions */
 .position-absolute {
-  position: absolute; }
+  position: absolute;
+}
 
 .position-relative {
-  position: relative; }
+  position: relative;
+}
 
 .position-fixed {
-  position: fixed; }
+  position: fixed;
+}
 
 .position-sticky {
-  position: sticky; }
+  position: -webkit-sticky;
+  position: sticky;
+}
 
 .z-index-100 {
-  z-index: 100; }
+  z-index: 100;
+}
 
 .z-index-50 {
-  z-index: 50; }
+  z-index: 50;
+}
 
 .z-index-10 {
-  z-index: 10; }
+  z-index: 10;
+}
 
 .z-index-1 {
-  z-index: 1; }
+  z-index: 1;
+}
 
 /* Buttons */
 .btn {
@@ -189,25 +213,34 @@ a {
   background: none;
   padding: 0.35rem 1rem;
   border-radius: 0.2rem;
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
 .btn:hover {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .btn-primary {
   color: #048000;
   color: #53b5d4;
   background-color: brown;
-  border: 1px solid #007180; }
-  .btn-primary a {
-    color: white; }
+  border: 1px solid #007180;
+}
+
+.btn-primary a {
+  color: white;
+}
 
 .btn-secondary {
   color: #53b5d4;
   background-color: #070729;
-  border: 1px solid #53b5d4; }
-  .btn-secondary a {
-    color: #53b5d4; }
+  border: 1px solid #53b5d4;
+}
+
+.btn-secondary a {
+  color: #53b5d4;
+}
 
 /**
  * /* Flex
@@ -215,176 +248,316 @@ a {
  * @format
  */
 .flex {
-  display: flex; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 
 /* Justify Content */
 .justify-start {
-  justify-content: flex-start; }
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
 
 .justify-end {
-  justify-content: flex-end; }
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
 
 .justify-center {
-  justify-content: center; }
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 
 .justify-between {
-  justify-content: space-between; }
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
 
 .justify-around {
-  justify-content: space-around; }
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
 
 .justify-evenly {
-  justify-content: space-evenly; }
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
 
 /* Align Items */
 .align-start {
-  align-items: flex-start; }
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
 
 .align-end {
-  align-items: flex-end; }
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
 
 .align-center {
-  align-items: center; }
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
 .align-stretch {
-  align-items: stretch; }
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
 
 .align-baseline {
-  align-items: baseline; }
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
 
 /* Align Content */
 .align-content-start {
-  align-content: flex-start; }
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
 
 .align-content-end {
-  align-content: flex-end; }
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+}
 
 .align-content-center {
-  align-content: center; }
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
 
 .align-content-stretch {
-  align-content: stretch; }
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+}
 
 .align-content-around {
-  align-content: space-around; }
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+}
 
 .align-content-between {
-  align-content: space-between; }
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
 
 /* Flex Wrap */
 .flex-wrap-yes {
-  flex-wrap: wrap; }
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
 
 .flex-wrap-no {
-  flex-wrap: nowrap; }
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
 
 .flex-wrap-reverse {
-  flex-wrap: wrap-reverse; }
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+}
 
 /* Flex Direction */
 .flex-direction-column {
-  flex-direction: column; }
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
 
 .flex-direction-column-reverse {
-  flex-direction: column-reverse; }
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
 
 .flex-direction-row {
-  flex-direction: row; }
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
 
 .flex-direction-row-reverse {
-  flex-direction: row-reverse; }
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
 
 /* Align Self */
 .align-self-start {
-  align-self: flex-start; }
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
 
 .align-self-end {
-  align-self: flex-end; }
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
 
 .align-self-center {
-  align-self: center; }
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
 
 .align-self-auto {
-  align-self: auto; }
+  -ms-flex-item-align: auto;
+      -ms-grid-row-align: auto;
+      align-self: auto;
+}
 
 .align-self-stretch {
-  align-self: stretch; }
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+}
 
 .align-self-baseline {
-  align-self: baseline; }
+  -ms-flex-item-align: baseline;
+      align-self: baseline;
+}
 
 /* Flex basis */
 .flex-100 {
-  flex: 0 1 100%; }
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+}
 
 .flex-80 {
-  flex: 0 1 80%; }
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 80%;
+          flex: 0 1 80%;
+}
 
 .flex-75 {
-  flex: 0 1 75%; }
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 75%;
+          flex: 0 1 75%;
+}
 
 .flex-70 {
-  flex: 0 1 70%; }
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 70%;
+          flex: 0 1 70%;
+}
 
 .flex-69 {
-  flex: 0 1 69%; }
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 69%;
+          flex: 0 1 69%;
+}
 
 .flex-60 {
-  flex: 0 1 60%; }
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 60%;
+          flex: 0 1 60%;
+}
 
 .flex-59 {
-  flex: 0 1 59%; }
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 59%;
+          flex: 0 1 59%;
+}
 
 .flex-50 {
-  flex: 0 1 50%; }
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+}
 
 .flex-48 {
-  flex: 0 1 48%; }
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 48%;
+          flex: 0 1 48%;
+}
 
 .flex-40 {
-  flex: 0 1 40%; }
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 40%;
+          flex: 0 1 40%;
+}
 
 .flex-32 {
-  flex: 0 1 32%; }
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 32%;
+          flex: 0 1 32%;
+}
 
 .flex-30 {
-  flex: 0 1 30%; }
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 30%;
+          flex: 0 1 30%;
+}
 
 .flex-25 {
-  flex: 0 1 25%; }
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 25%;
+          flex: 0 1 25%;
+}
 
 .flex-20 {
-  flex: 0 1 20%; }
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 20%;
+          flex: 0 1 20%;
+}
 
 .particleHeader {
   background-color: #070729;
-  padding: 1rem 0; }
-  .particleHeader ul {
-    margin: 0;
-    padding: 0; }
-  .particleHeader .particleLogo a {
-    font-size: 2rem;
-    text-transform: capitalize;
-    font-style: italic;
-    font-family: "Cedarville Cursive";
-    color: #53b5d4; }
-  .particleHeader .particleNavLink {
-    width: 30%; }
-    .particleHeader .particleNavLink li a {
-      font-size: 1rem;
-      color: #53b5d4;
-      text-transform: capitalize;
-      font-family: "Cedarville Cursive"; }
+  padding: 1rem 0;
+}
+
+.particleHeader ul {
+  margin: 0;
+  padding: 0;
+}
+
+.particleHeader .particleLogo a {
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-style: italic;
+  font-family: "Cedarville Cursive";
+  color: #53b5d4;
+}
+
+.particleHeader .particleNavLink {
+  width: 30%;
+}
+
+.particleHeader .particleNavLink li a {
+  font-size: 1rem;
+  color: #53b5d4;
+  text-transform: capitalize;
+  font-family: "Cedarville Cursive";
+}
 
 .particleFooter {
   background-color: #1a2a53;
-  padding: 1rem 0; }
-  .particleFooter div {
-    text-align: center; }
-    .particleFooter div small {
-      color: #070729;
-      vertical-align: middle;
-      text-transform: lowercase; }
+  padding: 1rem 0;
+}
+
+.particleFooter div {
+  text-align: center;
+}
+
+.particleFooter div small {
+  color: #070729;
+  vertical-align: middle;
+  text-transform: lowercase;
+}
 
 .homeHeader {
   position: absolute;
@@ -392,26 +565,33 @@ a {
   left: 0;
   right: 0;
   top: 0;
-  padding: 1rem 0; }
+  padding: 1rem 0;
+}
 
 .logo {
   width: 20%;
   font-size: 2rem;
   font-weight: 900;
-  font-style: oblique; }
-  .logo a {
-    color: #53b5d4;
-    font-size: 3rem;
-    text-transform: uppercase;
-    font-family: "Cedarville Cursive"; }
+  font-style: oblique;
+}
+
+.logo a {
+  color: #53b5d4;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-family: "Cedarville Cursive";
+}
 
 .subLogo {
-  width: 30%; }
-  .subLogo li a {
-    color: #53b5d4;
-    font-size: 1.5rem;
-    text-transform: capitalize;
-    font-family: "Cedarville Cursive"; }
+  width: 30%;
+}
+
+.subLogo li a {
+  color: #53b5d4;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  font-family: "Cedarville Cursive";
+}
 
 #canvas {
   position: absolute;
@@ -419,7 +599,8 @@ a {
   height: 100%;
   background-image: url("../images/pexels-edoardo-tommasini-2034851.jpg");
   background-position: 100% 100%;
-  background-size: cover; }
+  background-size: cover;
+}
 
 .homeHeadingBox {
   position: absolute;
@@ -428,147 +609,197 @@ a {
   top: 0;
   right: 0;
   bottom: 0;
-  text-align: center; }
-  .homeHeadingBox div {
-    width: 50%; }
-  .homeHeadingBox span {
-    font-size: 1.3rem;
-    color: white; }
-  .homeHeadingBox h1 {
-    font-size: 3.5rem;
-    color: #53b5d4;
-    font-weight: 900;
-    margin: 1rem 0;
-    text-transform: uppercase;
-    word-wrap: break-word;
-    font-family: cursive;
-    text-shadow: 3px -5px #070729; }
-  .homeHeadingBox h2 {
-    font-size: 2rem;
-    color: wheat;
-    font-weight: 600;
-    text-transform: uppercase;
-    word-wrap: break-word;
-    text-shadow: 3px -5px #070729;
-    font-family: cursive; }
-  .homeHeadingBox p {
-    font-size: 1.3rem;
-    color: wheat;
-    font-weight: 100;
-    margin: 1rem 0;
-    font-family: "Cedarville Cursive"; }
+  text-align: center;
+}
 
-.formPageBody {
-  background-color: #4ca180; }
+.homeHeadingBox div {
+  width: 50%;
+}
+
+.homeHeadingBox span {
+  font-size: 1.3rem;
+  color: white;
+}
+
+.homeHeadingBox h1 {
+  font-size: 3.5rem;
+  color: #53b5d4;
+  font-weight: 900;
+  margin: 1rem 0;
+  text-transform: uppercase;
+  word-wrap: break-word;
+  font-family: cursive;
+  text-shadow: 3px -5px #070729;
+}
+
+.homeHeadingBox h2 {
+  font-size: 2rem;
+  color: wheat;
+  font-weight: 600;
+  text-transform: uppercase;
+  word-wrap: break-word;
+  text-shadow: 3px -5px #070729;
+  font-family: cursive;
+}
+
+.homeHeadingBox p {
+  font-size: 1.3rem;
+  color: wheat;
+  font-weight: 100;
+  margin: 1rem 0;
+  font-family: "Cedarville Cursive";
+}
 
 .eventForm {
   width: 35%;
   height: 100vh;
   margin: 2.5rem auto;
   padding: 2rem 3rem;
-  background-color: #53b5d4;
-  border-radius: 8px; }
-  .eventForm h2 {
-    text-align: center;
-    text-transform: capitalize;
-    font-size: 1.5rem;
-    font-weight: bold; }
-  .eventForm input {
-    width: 100%;
-    font-size: 1rem;
-    text-transform: capitalize;
-    outline: none;
-    color: white;
-    border-radius: 2px;
-    border: 1px solid #070729;
-    background-color: #4ca18081; }
-  .eventForm textarea {
-    width: 100%;
-    resize: none;
-    border-radius: 2px;
-    color: white;
-    outline: none;
-    border: 1px solid #070729;
-    background-color: #4ca18081; }
-  .eventForm .formDateBox div {
-    width: 40%; }
-    .eventForm .formDateBox div label {
-      font-size: 0.8rem;
-      color: #070729;
-      text-transform: capitalize; }
-  .eventForm .submit {
-    padding: 1rem 0;
-    background-color: #070729;
-    color: #53b5d4; }
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 5px gray;
+          box-shadow: 0 0 5px gray;
+}
+
+.eventForm h2 {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.eventForm input {
+  width: 100%;
+  font-size: 1rem;
+  text-transform: capitalize;
+  outline: none;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid #070729;
+}
+
+.eventForm textarea {
+  width: 100%;
+  resize: none;
+  border-radius: 2px;
+  outline: none;
+  border: 1px solid #070729;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+}
+
+.eventForm .formDateBox div {
+  width: 40%;
+}
+
+.eventForm .formDateBox div label {
+  font-size: 0.8rem;
+  color: #070729;
+  text-transform: capitalize;
+}
+
+.eventForm .submit {
+  padding: 1rem 0;
+  background-color: #070729;
+  color: #53b5d4;
+}
 
 .eventsContainer {
   height: 100vh;
   background-color: #070729;
-  padding-top: 1rem; }
+  padding-top: 1rem;
+}
 
 .eventsUl {
   width: 68%;
   height: 100%;
-  overflow: auto; }
-  .eventsUl li {
-    background-color: #1a2a53;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    border-radius: 0.5rem; }
-    .eventsUl li h1 {
-      text-transform: capitalize;
-      font-size: 1.5rem;
-      color: #5cbb51; }
-    .eventsUl li p {
-      text-transform: capitalize;
-      font-size: smaller;
-      color: wheat;
-      color: gray; }
-    .eventsUl li .locationSpan {
-      margin: 0.5rem 0; }
-      .eventsUl li .locationSpan span {
-        font-size: smaller;
-        text-transform: capitalize;
-        color: gray; }
+  overflow: auto;
+}
+
+.eventsUl li {
+  background-color: #1a2a53;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.eventsUl li h1 {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  color: #5cbb51;
+}
+
+.eventsUl li p {
+  text-transform: capitalize;
+  font-size: smaller;
+  color: wheat;
+  color: gray;
+}
+
+.eventsUl li .locationSpan {
+  margin: 0.5rem 0;
+}
+
+.eventsUl li .locationSpan span {
+  font-size: smaller;
+  text-transform: capitalize;
+  color: gray;
+}
 
 .eventsUl::-webkit-scrollbar {
-  display: none; }
+  display: none;
+}
 
 .sideBar {
-  width: 30%; }
+  width: 30%;
+}
 
 .filterBar {
   padding: 2rem 1rem;
   border-radius: 4px;
-  background-color: #1a2a53; }
-  .filterBar .custom-select {
-    width: 100%; }
-    .filterBar .custom-select h3 {
-      text-transform: capitalize;
-      color: #5cbb51;
-      font-size: smaller; }
-  .filterBar form {
-    width: 100%; }
-    .filterBar form legend {
-      text-align: center;
-      text-transform: capitalize;
-      color: #53b5d4;
-      padding: 0.5rem 0;
-      border: 1px solid #53b5d4;
-      background-color: #070729;
-      margin: 0.4rem 0; }
-    .filterBar form label {
-      color: #5cbb51;
-      font-size: smaller; }
-    .filterBar form input {
-      width: 100%;
-      margin: 0.2rem 0;
-      padding: 0.5rem;
-      color: #53b5d4;
-      background-color: #07072950;
-      border: 1px solid #53b5d4; }
-    .filterBar form .submit {
-      text-transform: capitalize; }
+  background-color: #1a2a53;
+}
+
+.filterBar .custom-select {
+  width: 100%;
+}
+
+.filterBar .custom-select h3 {
+  text-transform: capitalize;
+  color: #5cbb51;
+  font-size: smaller;
+}
+
+.filterBar form {
+  width: 100%;
+}
+
+.filterBar form legend {
+  text-align: center;
+  text-transform: capitalize;
+  color: #53b5d4;
+  padding: 0.5rem 0;
+  border: 1px solid #53b5d4;
+  background-color: #070729;
+  margin: 0.4rem 0;
+}
+
+.filterBar form label {
+  color: #5cbb51;
+  font-size: smaller;
+}
+
+.filterBar form input {
+  width: 100%;
+  margin: 0.2rem 0;
+  padding: 0.5rem;
+  color: #53b5d4;
+  background-color: #07072950;
+  border: 1px solid #53b5d4;
+}
+
+.filterBar form .submit {
+  text-transform: capitalize;
+}
 
 .sideBarUlCategory {
   width: 100%;
@@ -577,20 +808,27 @@ a {
   padding: 0.5rem;
   color: #53b5d4;
   text-transform: capitalize;
-  background-color: #070729; }
-  .sideBarUlCategory h3 {
-    text-transform: capitalize;
-    color: #53b5d4; }
-  .sideBarUlCategory .categoryLi {
-    text-align: left;
-    font-size: 0.8rem;
-    font-weight: 400;
-    text-transform: capitalize;
-    background-color: #070729;
-    padding-top: 0.5rem;
-    border-bottom: 1px solid #1a2a53; }
-    .sideBarUlCategory .categoryLi a {
-      color: #53b5d4; }
+  background-color: #070729;
+}
+
+.sideBarUlCategory h3 {
+  text-transform: capitalize;
+  color: #53b5d4;
+}
+
+.sideBarUlCategory .categoryLi {
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  background-color: #070729;
+  padding-top: 0.5rem;
+  border-bottom: 1px solid #1a2a53;
+}
+
+.sideBarUlCategory .categoryLi a {
+  color: #53b5d4;
+}
 
 .sideBarUlLocation {
   width: 100%;
@@ -599,118 +837,163 @@ a {
   padding: 0.5rem;
   color: #53b5d4;
   background-color: #070729;
-  text-transform: capitalize; }
-  .sideBarUlLocation h3 {
-    text-transform: capitalize; }
-  .sideBarUlLocation .locationLi {
-    text-align: left;
-    font-size: 0.8rem;
-    font-weight: 400;
-    text-transform: capitalize;
-    background-color: #070729;
-    padding-top: 0.5rem;
-    border-bottom: 1px solid #1a2a53; }
-    .sideBarUlLocation .locationLi a {
-      color: #53b5d4; }
+  text-transform: capitalize;
+}
+
+.sideBarUlLocation h3 {
+  text-transform: capitalize;
+}
+
+.sideBarUlLocation .locationLi {
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  background-color: #070729;
+  padding-top: 0.5rem;
+  border-bottom: 1px solid #1a2a53;
+}
+
+.sideBarUlLocation .locationLi a {
+  color: #53b5d4;
+}
 
 .displayBlock {
   display: block;
   color: white;
   background-color: #53b5d4;
-  margin: 1rem 0; }
+  margin: 1rem 0;
+}
 
 .displayNone {
-  display: none; }
+  display: none;
+}
 
 .eventContainer {
   height: 100vh;
-  background-color: #1a2a53a4; }
-  .eventContainer .eventBox {
-    width: 80%;
-    padding: 2rem;
-    border-radius: 8px;
-    background-color: #4ca1808a;
-    box-shadow: 0px 0px 4px 4px #070729be; }
-    .eventContainer .eventBox article h1 {
-      font-size: 2rem;
-      color: white;
-      text-transform: capitalize;
-      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
-    .eventContainer .eventBox article .host {
-      font-size: 1rem;
-      color: white;
-      text-transform: capitalize; }
-    .eventContainer .eventBox article .summary {
-      margin: 0.5rem 0;
-      color: white;
-      font-size: small; }
-    .eventContainer .eventBox article .location {
-      color: white;
-      text-transform: capitalize;
-      margin-bottom: 0.5rem; }
-  .eventContainer .remarkForm {
-    width: 15%;
-    margin-top: 1rem; }
-    .eventContainer .remarkForm input {
-      width: 100%;
-      border: 1px solid;
-      border-top-right-radius: 1rem;
-      background-color: #1a2a53;
-      color: white;
-      outline: none; }
-    .eventContainer .remarkForm textarea {
-      width: 100%;
-      resize: none;
-      margin: 0.5rem 0;
-      border: 1px solid;
-      color: white;
-      outline: none;
-      border-bottom-left-radius: 1rem;
-      background-color: #1a2a53; }
-    .eventContainer .remarkForm .submit {
-      width: 4rem;
-      border-bottom-left-radius: 1rem; }
-  .eventContainer .remarkContainer {
-    margin: 0.5rem 0;
-    display: inline-block; }
-    .eventContainer .remarkContainer .remarkName {
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: white; }
-      .eventContainer .remarkContainer .remarkName span {
-        font-size: 0.7rem;
-        font-weight: 500;
-        color: white; }
-    .eventContainer .remarkContainer .remarkEdit {
-      font-size: 0.7rem;
-      font-weight: 900;
-      color: #070729; }
-    .eventContainer .remarkContainer .remarkDelete {
-      font-size: 0.7rem;
-      font-weight: 900;
-      color: brown; }
+  background-color: #1a2a53a4;
+}
+
+.eventContainer .eventBox {
+  width: 80%;
+  padding: 2rem;
+  border-radius: 8px;
+  background-color: #4ca1808a;
+  -webkit-box-shadow: 0px 0px 4px 4px #070729be;
+          box-shadow: 0px 0px 4px 4px #070729be;
+}
+
+.eventContainer .eventBox article h1 {
+  font-size: 2rem;
+  color: white;
+  text-transform: capitalize;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.eventContainer .eventBox article .host {
+  font-size: 1rem;
+  color: white;
+  text-transform: capitalize;
+}
+
+.eventContainer .eventBox article .summary {
+  margin: 0.5rem 0;
+  color: white;
+  font-size: small;
+}
+
+.eventContainer .eventBox article .location {
+  color: white;
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+}
+
+.eventContainer .remarkForm {
+  width: 15%;
+  margin-top: 1rem;
+}
+
+.eventContainer .remarkForm input {
+  width: 100%;
+  border: 1px solid;
+  border-top-right-radius: 1rem;
+  background-color: #1a2a53;
+  color: white;
+  outline: none;
+}
+
+.eventContainer .remarkForm textarea {
+  width: 100%;
+  resize: none;
+  margin: 0.5rem 0;
+  border: 1px solid;
+  color: white;
+  outline: none;
+  border-bottom-left-radius: 1rem;
+  background-color: #1a2a53;
+}
+
+.eventContainer .remarkForm .submit {
+  width: 4rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.eventContainer .remarkContainer {
+  margin: 0.5rem 0;
+  display: inline-block;
+}
+
+.eventContainer .remarkContainer .remarkName {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: white;
+}
+
+.eventContainer .remarkContainer .remarkName span {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: white;
+}
+
+.eventContainer .remarkContainer .remarkEdit {
+  font-size: 0.7rem;
+  font-weight: 900;
+  color: #070729;
+}
+
+.eventContainer .remarkContainer .remarkDelete {
+  font-size: 0.7rem;
+  font-weight: 900;
+  color: brown;
+}
 
 .editRemarkForm {
   width: 40%;
   height: 20rem;
   margin: auto;
   padding: 2rem;
-  border: 1px solid black; }
-  .editRemarkForm h1 {
-    font-size: 2rem;
-    color: #070729;
-    text-align: center;
-    text-transform: capitalize;
-    font-weight: 700; }
-  .editRemarkForm input {
-    width: 100%;
-    font-size: 1.5rem;
-    margin: 1rem 0;
-    text-transform: capitalize; }
-  .editRemarkForm textarea {
-    width: 100%;
-    font-size: 1.5rem;
-    margin: 1rem 0;
-    resize: none; }
+  border: 1px solid black;
+}
 
+.editRemarkForm h1 {
+  font-size: 2rem;
+  color: #070729;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.editRemarkForm input {
+  width: 100%;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  text-transform: capitalize;
+}
+
+.editRemarkForm textarea {
+  width: 100%;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  resize: none;
+}
 /*# sourceMappingURL=style.css.map */
